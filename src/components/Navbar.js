@@ -1,6 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../state';
 
 function Navbar() {
+    const amount=useSelector(state=>state.amount)
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -34,7 +39,7 @@ function Navbar() {
             </ul>
           </div>
           <form className="d-flex ms-auto">
-            <button className="btn btn-primary">Change transaction</button>
+            <button className="btn btn-primary">Change transaction:{amount}</button>
           </form>
         </div>
       </nav>
